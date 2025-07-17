@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBlog – C# Desktop & SQL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Georgia", serif;
+      }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 leading-relaxed">
+    <header class="border-b border-gray-200">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+        <nav class="space-x-6 text-sm">
+          <a href="/" class="hover:text-gray-600">Beranda</a>
+          <a href="#materi" class="hover:text-gray-600">Materi</a>
+          <a href="#tentang" class="hover:text-gray-600">Tentang</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12" id="materi">
+      <img
+        src="https://tse1.mm.bing.net/th/id/OIF.b512YX8yCXttCpITPIyE9A?rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt="PBTGM"
+        class="w-full rounded shadow mb-8"
+      />
+      <h2 class="text-4xl font-bold mb-4">Pemrograman Berbasis Teks dan Grafis Multimedia</h2>
+      <p class="text-gray-600 text-lg mb-6 italic">
+        "Pembelajaran desktop C# bersanding SQL untuk membangun aplikasi nyata."
+      </p>
+
+      <section class="space-y-6 text-gray-800 text-justify">
+        <h3 class="text-2xl font-semibold">Pendahuluan</h3>
+        <p>
+          PBTGM kelas XI memperkenalkan dasar-dasar pemrograman menggunakan <strong>C#</strong> untuk aplikasi desktop.
+          Dengan antarmuka Windows Forms dan penyimpanan berbasis <strong>SQL Server</strong>, siswa diajak membuat aplikasi yang nyata dan berguna.
+        </p>
+
+        <h3 class="text-2xl font-semibold">Apa itu C# Desktop?</h3>
+        <p>
+          C# (dibaca: C-sharp) merupakan bahasa pemrograman dari Microsoft. Dikombinasikan dengan Windows Forms,
+          ia memungkinkan kita membangun aplikasi GUI yang profesional dan interaktif.
+        </p>
+
+        <h4 class="text-xl font-semibold mt-4">Contoh Program Hello World</h4>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+using System;
+using System.Windows.Forms;
+
+public class Hello : Form {
+  public Hello() {
+    Label label = new Label();
+    label.Text = "Halo Dunia!";
+    label.Dock = DockStyle.Fill;
+    label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+    this.Controls.Add(label);
+  }
+
+  [STAThread]
+  public static void Main() {
+    Application.Run(new Hello());
+  }
+}
+        </pre>
+
+        <h3 class="text-2xl font-semibold mt-10">Integrasi SQL Server dan CRUD</h3>
+        <p>
+          Untuk menyimpan data dengan baik, kita hubungkan aplikasi ke <strong>SQL Server</strong>.
+          Proses ini mencakup koneksi, tambah, baca, ubah, dan hapus data (CRUD).
+        </p>
+
+        <h4 class="text-xl font-semibold mt-4">Langkah-Langkah</h4>
+        <ol class="list-decimal pl-6">
+          <li>Pasang <strong>SQL Server</strong> dan <strong>SQL Server Management Studio (SSMS)</strong>.</li>
+          <li>Buat database bernama <code>db_sekolah</code>.</li>
+          <li>Buat tabel <code>siswa</code>:
+            <pre class="bg-gray-100 p-2 rounded text-sm">
+CREATE TABLE siswa (
+  id INT PRIMARY KEY IDENTITY,
+  nama NVARCHAR(100),
+  nis VARCHAR(20),
+  kelas VARCHAR(10)
+);
+            </pre>
+          </li>
+          <li>Buka Visual Studio → buat project Windows Forms App (.NET Framework).</li>
+        </ol>
+
+        <h4 class="text-xl font-semibold mt-4">Contoh Koneksi dan Baca Data</h4>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+using System.Data.SqlClient;
+
+string connStr = "Server=localhost;Database=db_sekolah;Trusted_Connection=True;";
+SqlConnection conn = new SqlConnection(connStr);
+
+try {
+  conn.Open();
+  MessageBox.Show("Terhubung ke database!");
+
+  string query = "SELECT * FROM siswa";
+  SqlCommand cmd = new SqlCommand(query, conn);
+  SqlDataReader reader = cmd.ExecuteReader();
+  while (reader.Read()) {
+    Console.WriteLine(reader["nama"]);
+  }
+  conn.Close();
+} catch (Exception ex) {
+  MessageBox.Show("Gagal: " + ex.Message);
+}
+        </pre>
+
+        <h4 class="text-xl font-semibold mt-4">Contoh Fungsi CRUD</h4>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+// CREATE
+string insertQuery = "INSERT INTO siswa (nama, nis, kelas) VALUES (@nama, @nis, @kelas)";
+SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+insertCmd.Parameters.AddWithValue("@nama", "Ayu");
+insertCmd.Parameters.AddWithValue("@nis", "112233");
+insertCmd.Parameters.AddWithValue("@kelas", "XI-RPL");
+insertCmd.ExecuteNonQuery();
+
+// READ
+string readQuery = "SELECT * FROM siswa";
+SqlCommand readCmd = new SqlCommand(readQuery, conn);
+SqlDataReader r = readCmd.ExecuteReader();
+while (r.Read()) {
+  Console.WriteLine($"{r["nama"]} - {r["kelas"]}");
+}
+
+// UPDATE
+string updateQuery = "UPDATE siswa SET kelas=@kelas WHERE nis=@nis";
+SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
+updateCmd.Parameters.AddWithValue("@kelas", "XI-MM");
+updateCmd.Parameters.AddWithValue("@nis", "112233");
+updateCmd.ExecuteNonQuery();
+
+// DELETE
+string deleteQuery = "DELETE FROM siswa WHERE nis=@nis";
+SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn);
+deleteCmd.Parameters.AddWithValue("@nis", "112233");
+deleteCmd.ExecuteNonQuery();
+        </pre>
+
+        <h3 class="text-2xl font-semibold mt-8">Penutup</h3>
+        <p>
+          Dengan menguasai C# desktop dan koneksi SQL Server, siswa mampu membangun aplikasi nyata seperti:
+          sistem manajemen siswa, inventaris barang, dan lainnya. Semoga ilmu ini menjadi bekal yang mencerahkan masa depan.
+        </p>
+
+        <div class="mt-8">
+          <a href="/" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
+            Kembali ke Beranda
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="tentang" class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
+      &copy; 2025 PBTGM XI. Mengkodekan masa depan, dari baris pertama.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBlog – Flutter & Dart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 leading-relaxed">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+      <nav class="space-x-6 text-sm">
+        <a href="/" class="hover:text-gray-600">Beranda</a>
+        <a href="#materi" class="hover:text-gray-600">Materi</a>
+        <a href="#tentang" class="hover:text-gray-600">Tentang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12" id="materi">
+    <img src="https://cypersystems.com/wp-content/uploads/2022/12/Flutter-1.jpg" alt="Flutter"
+      class="w-full rounded shadow mb-8" />
+    <h2 class="text-4xl font-bold mb-4">Pemrograman Perangkat Bergerak (PPB)</h2>
+    <p class="text-gray-600 text-lg mb-6 italic">
+      "Dart menari, aplikasi menjelma — satu basis, dua dunia (Android & iOS)."
+    </p>
+
+    <section class="space-y-10 text-gray-800 text-justify">
+      <div>
+        <h3 class="text-2xl font-semibold">1. Pendahuluan</h3>
+        <p>
+          Flutter adalah framework modern dari Google, memadukan keindahan UI dan efisiensi logika dengan bahasa
+          <strong>Dart</strong>. Satu kode, lintas platform.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">2. Dasar Bahasa Dart</h3>
+        <ul class="list-disc pl-6">
+          <li>Variabel: <code>var nama = "Tuan";</code></li>
+          <li>Fungsi: <code>void sapa() { print("Halo"); }</code></li>
+          <li>Kondisi: <code>if, else, switch</code></li>
+          <li>Perulangan: <code>for, while, do-while</code></li>
+          <li>Kelas dan Objek: OOP (Class, Constructor, Method, Inheritance)</li>
+        </ul>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+void main() {
+  var nama = 'Tuan';
+  print('Selamat datang, \$nama');
+}
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">3. Widget Dasar</h3>
+        <p>Flutter membangun UI dari komponen kecil bernama <strong>Widget</strong>. Segala tampilan adalah widget.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(child: Text('Halo, Flutter!')),
+      ),
+    );
+  }
+}
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">4. Tata Letak (Layout)</h3>
+        <p>Mengatur posisi menggunakan <code>Column</code>, <code>Row</code>, <code>Container</code>.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+Column(
+  children: [
+    Text('Judul', style: TextStyle(fontSize: 20)),
+    SizedBox(height: 10),
+    Row(
+      children: [
+        Icon(Icons.star, color: Colors.amber),
+        Text('5.0'),
+      ],
+    ),
+  ],
+)
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">5. Stateful Widget</h3>
+        <p>Widget dengan data yang bisa berubah dinamakan <code>Stateful</code>.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+class CounterApp extends StatefulWidget {
+  @override
+  _CounterAppState createState() => _CounterAppState();
+}
+
+class _CounterAppState extends State<CounterApp> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Angka: \$count'),
+            ElevatedButton(
+              onPressed: () => setState(() => count++),
+              child: Text('Tambah'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">6. Navigasi dan Routing</h3>
+        <p>Navigasi antar halaman dengan <code>Navigator</code> dan routing.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => HalamanKedua()),
+);
+
+MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/': (context) => Beranda(),
+    '/kedua': (context) => HalamanKedua(),
+  },
+);
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">7. Packages Tambahan</h3>
+        <p>Tambahkan fungsionalitas seperti HTTP, animasi, atau icon dengan <code>pubspec.yaml</code>.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.5
+  provider: ^6.0.5
+  google_fonts: ^6.1.0
+        </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">8. Penutup</h3>
+        <p>
+          Dari Dart hingga Flutter, dari statis ke dinamis, dari satu layar ke banyak halaman — inilah seni PPB. Tuan
+          dan para siswa diajak menjelajah dunia pemrograman modern yang indah dan tangkas.
+        </p>
+      </div>
+
+      <div class="mt-8">
+        <a href="/" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
+          Kembali ke Beranda
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500" id="tentang">
+    &copy; 2025 PPB XI. Satu kode, sejuta perangkat. | Disusun dengan penuh cinta untuk Tuan.
+  </footer>
+</body>
+
+</html>

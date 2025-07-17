@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBlog – Laravel & API</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 leading-relaxed">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+      <nav class="space-x-6 text-sm">
+        <a href="/" class="hover:text-gray-600">Beranda</a>
+        <a href="#materi" class="hover:text-gray-600">Materi</a>
+        <a href="#tentang" class="hover:text-gray-600">Tentang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12" id="materi">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.iCox_XdylgscEr8jWWTkegHaEU?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Web"
+      class="w-full rounded shadow mb-8" />
+    <h2 class="text-4xl font-bold mb-4">Pemrograman Web XI</h2>
+    <p class="text-gray-600 text-lg mb-6 italic">
+      "Laravel bersuara, API mengalir, sesi dijaga seperti mahkota sang raja."
+    </p>
+
+    <div>
+      <h3 class="text-2xl font-semibold">9. Membuat API dengan Laravel</h3>
+      <p class="mb-4">
+        Laravel menyuguhkan keindahan dalam membangun
+        <strong>RESTful API</strong>. Dengan arsitektur MVC dan fitur bawaan
+        seperti routing dan resource controller, Laravel menjadi pilihan
+        anggun nan efisien.
+      </p>
+
+      <h4 class="text-xl font-semibold mt-6">Langkah 1: Persiapan Project</h4>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+composer create-project laravel/laravel api-web
+cd api-web
+php artisan serve
+  </pre>
+
+      <h4 class="text-xl font-semibold mt-6">
+        Langkah 2: Buat Model & Migration
+      </h4>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+php artisan make:model Artikel -m
+  </pre>
+      <p class="mt-2">
+        Isi migration <code>create_artikels_table.php</code>:
+      </p>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+Schema::create('artikels', function (Blueprint $table) {
+    $table->id();
+    $table->string('judul');
+    $table->text('konten');
+    $table->timestamps();
+});
+  </pre>
+      <p>Lalu migrasi:</p>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+php artisan migrate
+  </pre>
+
+      <h4 class="text-xl font-semibold mt-6">
+        Langkah 3: Buat Controller API
+      </h4>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+php artisan make:controller API/ArtikelController --api
+  </pre>
+
+      <p>Isi dari <code>ArtikelController</code>:</p>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+use App\Models\Artikel;
+use Illuminate\Http\Request;
+
+class ArtikelController extends Controller
+{
+    public function index()
+    {
+        return Artikel::all();
+    }
+
+    public function store(Request $request)
+    {
+        return Artikel::create($request->all());
+    }
+
+    public function show($id)
+    {
+        return Artikel::findOrFail($id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $artikel = Artikel::findOrFail($id);
+        $artikel->update($request->all());
+        return $artikel;
+    }
+
+    public function destroy($id)
+    {
+        Artikel::destroy($id);
+        return response()->json(null, 204);
+    }
+}
+  </pre>
+
+      <h4 class="text-xl font-semibold mt-6">
+        Langkah 4: Tambahkan Routing API
+      </h4>
+      <p>Edit <code>routes/api.php</code>:</p>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+use App\Http\Controllers\API\ArtikelController;
+
+Route::apiResource('artikels', ArtikelController::class);
+  </pre>
+
+      <h4 class="text-xl font-semibold mt-6">
+        Langkah 5: Tes dengan Postman
+      </h4>
+      <p>URL dasar: <code>http://localhost:8000/api/artikels</code></p>
+      <ul class="list-disc pl-6">
+        <li><strong>GET</strong> – Tampilkan semua data</li>
+        <li><strong>POST</strong> – Tambah data</li>
+        <li><strong>GET /{id}</strong> – Tampilkan satu data</li>
+        <li><strong>PUT /{id}</strong> – Update data</li>
+        <li><strong>DELETE /{id}</strong> – Hapus data</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500" id="tentang">
+    &copy; 2025 Web XI. Laravel: megah, rapi, terpercaya.
+  </footer>
+</body>
+
+</html>

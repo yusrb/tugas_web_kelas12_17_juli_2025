@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBlog - Basis Data Kelas XI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 leading-relaxed">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+      <nav class="space-x-6 text-sm">
+        <a href="/" class="hover:text-gray-600">Beranda</a>
+        <a href="#materi" class="hover:text-gray-600">Materi</a>
+        <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12" id="materi">
+    <img src="https://i.ytimg.com/vi/mV9O-hgIbSw/maxresdefault.jpg" alt="Database" class="w-full rounded shadow mb-8" />
+    <h2 class="text-4xl font-bold mb-4">Pemrograman Basis Data (Database)</h2>
+    <p class="text-gray-600 text-lg mb-6 italic">
+      "Data tersimpan tak bersuara, hingga diperintah bernyanyi dalam query."
+    </p>
+
+    <section class="space-y-10 text-gray-800 text-justify">
+      <div>
+        <h3 class="text-2xl font-semibold">1. Apa itu DBMS?</h3>
+        <p>
+          DBMS (Database Management System) adalah perangkat lunak untuk
+          membuat, mengelola, dan memanipulasi database. Contoh: MySQL,
+          PostgreSQL, SQL Server, dan Oracle.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">
+          2. DDL – Data Definition Language
+        </h3>
+        <p>Digunakan untuk mendefinisikan struktur database.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+CREATE TABLE siswa (
+  id INT PRIMARY KEY,
+  nama VARCHAR(100),
+  umur INT
+);
+
+ALTER TABLE siswa ADD alamat TEXT;
+
+DROP TABLE siswa;
+          </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">
+          3. DML – Data Manipulation Language
+        </h3>
+        <p>Digunakan untuk manipulasi data di dalam tabel.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+-- Menambah data
+INSERT INTO siswa (id, nama, umur) VALUES (1, 'Budi', 17);
+
+-- Mengambil data
+SELECT * FROM siswa;
+
+-- Mengubah data
+UPDATE siswa SET umur = 18 WHERE id = 1;
+
+-- Menghapus data
+DELETE FROM siswa WHERE id = 1;
+          </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">4. DCL – Data Control Language</h3>
+        <p>Digunakan untuk hak akses dan keamanan data.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+-- Memberikan izin
+GRANT SELECT, INSERT ON siswa TO 'user1';
+
+-- Mencabut izin
+REVOKE INSERT ON siswa FROM 'user1';
+          </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">5. Subquery</h3>
+        <p>Query di dalam query, digunakan untuk seleksi kompleks.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+-- Menampilkan siswa dengan umur di atas rata-rata
+SELECT * FROM siswa
+WHERE umur > (
+  SELECT AVG(umur) FROM siswa
+);
+          </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">6. JOIN – Menggabungkan Tabel</h3>
+        <p>
+          JOIN digunakan untuk menggabungkan dua atau lebih tabel berdasarkan
+          relasi antar kolomnya. Biasanya menggunakan
+          <code>FOREIGN KEY</code>.
+        </p>
+
+        <h4 class="text-lg font-semibold mt-4">Contoh Struktur Tabel:</h4>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+-- Tabel siswa
+CREATE TABLE siswa (
+  id INT PRIMARY KEY,
+  nama VARCHAR(100)
+);
+
+-- Tabel nilai
+CREATE TABLE nilai (
+  id INT PRIMARY KEY,
+  id_siswa INT,
+  pelajaran VARCHAR(50),
+  nilai INT,
+  FOREIGN KEY (id_siswa) REFERENCES siswa(id)
+);
+  </pre>
+
+        <h4 class="text-lg font-semibold mt-4">1. INNER JOIN</h4>
+        <p>Mengembalikan data yang cocok di kedua tabel.</p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+SELECT siswa.nama, nilai.pelajaran, nilai.nilai
+FROM siswa
+INNER JOIN nilai ON siswa.id = nilai.id_siswa;
+  </pre>
+
+        <h4 class="text-lg font-semibold mt-4">2. LEFT JOIN</h4>
+        <p>
+          Menampilkan semua data dari tabel kiri meskipun tidak ada pasangan
+          di tabel kanan.
+        </p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+SELECT siswa.nama, nilai.pelajaran, nilai.nilai
+FROM siswa
+LEFT JOIN nilai ON siswa.id = nilai.id_siswa;
+  </pre>
+
+        <h4 class="text-lg font-semibold mt-4">3. RIGHT JOIN</h4>
+        <p>
+          Menampilkan semua data dari tabel kanan meskipun tidak ada pasangan
+          di tabel kiri.
+        </p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+SELECT siswa.nama, nilai.pelajaran, nilai.nilai
+FROM siswa
+RIGHT JOIN nilai ON siswa.id = nilai.id_siswa;
+  </pre>
+
+        <h4 class="text-lg font-semibold mt-4">4. FULL OUTER JOIN</h4>
+        <p>
+          Menampilkan semua data dari kedua tabel, meskipun tidak saling
+          berpasangan.
+        </p>
+        <p class="text-sm italic text-gray-600">
+          Catatan: Tidak semua DBMS mendukung FULL OUTER JOIN secara langsung
+          (MySQL tidak langsung, gunakan UNION).
+        </p>
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+SELECT siswa.nama, nilai.pelajaran, nilai.nilai
+FROM siswa
+LEFT JOIN nilai ON siswa.id = nilai.id_siswa
+UNION
+SELECT siswa.nama, nilai.pelajaran, nilai.nilai
+FROM siswa
+RIGHT JOIN nilai ON siswa.id = nilai.id_siswa;
+  </pre>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold">6. Kesimpulan</h3>
+        <p>
+          Basis data bukan sekadar tempat menyimpan informasi. Ia adalah
+          jantung dari sistem informasi, tempat logika, keamanan, dan
+          efisiensi bertemu. Kuasai DBMS dan perintah SQL untuk mengendalikan
+          data dengan elok dan bijak.
+        </p>
+      </div>
+
+      <div class="mt-8">
+        <a href="/" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
+          Kembali ke Beranda
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
+    &copy; 2025 Basis Data XI. Data terstruktur, dunia teratur.
+  </footer>
+</body>
+
+</html>
