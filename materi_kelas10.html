@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,166 +9,275 @@
     body {
       font-family: "Georgia", serif;
     }
-
-    pre {
-      background: #f3f4f6;
+    .prose pre {
+      background-color: #f3f4f6;
       padding: 1rem;
       border-radius: 0.5rem;
       overflow-x: auto;
+      font-size: 0.875rem;
+    }
+    .prose h3, .prose h4 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 0.25rem;
     }
   </style>
 </head>
-
 <body class="bg-white text-gray-900 leading-relaxed">
   <header class="border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
       <div class="flex items-center space-x-6">
         <nav class="space-x-6 text-sm">
-          <a href="index.html" class="text-gray-900">Beranda</a>
-          <a href="index.html#artikel" class="hover:text-gray-600 font-semibold">Artikel</a>
+          <a href="index.html" class="text-gray-900 font-semibold">Beranda</a>
+          <a href="index.html#artikel" class="hover:text-gray-600">Artikel</a>
           <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
         </nav>
         <div class="relative">
-          <input type="text" id="search" placeholder="Cari artikel..."
-            class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
+          <input type="text" id="search" placeholder="Cari artikel..." class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
         </div>
       </div>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <img src="https://blog.sribu.com/wp-content/uploads/2018/07/Bahasa-Pemrograman-1.jpg"
-      class="w-full h-96 object-cover rounded mb-8 shadow" alt="Pemrograman Web" />
-    <h2 class="text-4xl font-bold mb-4">Materi Pemrograman Kelas X</h2>
+  <main class="max-w-4xl mx-auto px-6 py-12 prose" id="materi">
+    <img
+      src="https://blog.sribu.com/wp-content/uploads/2018/07/Bahasa-Pemrograman-1.jpg"
+      alt="Pemrograman Web"
+      class="w-full h-96 object-cover rounded shadow-lg mb-8"
+    />
+    <h2 class="text-4xl font-bold mb-4">Materi Pemrograman Dasar Kelas X</h2>
+    <div class="flex items-center space-x-2 mb-4">
+      <span class="badge bg-blue-100 text-blue-800">Pemrograman Web</span>
+      <span class="text-gray-500 text-sm">• 10 menit baca</span>
+      <span class="text-gray-500 text-sm">• Oleh Admin</span>
+      <span class="text-gray-500 text-sm">• 31 Jul 2025</span>
+    </div>
+    <p class="text-gray-600 text-lg mb-6 italic">
+      "Kode adalah puisi teknologi, menari di antara baris untuk menciptakan dunia baru."
+    </p>
 
-    <section class="space-y-10">
+    <section class="space-y-10 text-gray-800 text-justify">
       <div>
-        <h3 class="text-2xl font-semibold">Python Dasar</h3>
+        <h3 class="text-2xl font-semibold">1. Python Dasar</h3>
+        <p class="mb-4">
+          Python adalah bahasa pemrograman yang sederhana namun kuat, ideal untuk pemula. Berikut adalah konsep dasar yang perlu dikuasai.
+        </p>
         <ul class="list-disc pl-6 mt-4 space-y-4">
-          <li>Variabel dan Input Output
-            <pre><code>nama = input("Masukkan nama: ")
-print("Halo", nama)</code></pre>
+          <li><strong>Variabel dan Input/Output</strong>
+            <p>Mengambil input dari pengguna dan menampilkannya.</p>
+            <pre>nama = input("Masukkan nama: ")
+print("Halo", nama)</pre>
           </li>
-          <li>Percabangan
-            <pre><code>x = 10
+          <li><strong>Percabangan</strong>
+            <p>Menggunakan <code>if</code> untuk pengambilan keputusan.</p>
+            <pre>x = 10
 if x > 5:
-    print("Lebih besar dari 5")</code></pre>
+    print("Lebih besar dari 5")</pre>
           </li>
-          <li>Perulangan
-            <pre><code>for i in range(5):
-    print("Iterasi ke-", i)</code></pre>
+          <li><strong>Perulangan</strong>
+            <p>Menggunakan <code>for</code> untuk iterasi berulang.</p>
+            <pre>for i in range(5):
+    print("Iterasi ke-", i)</pre>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-2xl font-semibold">HTML</h3>
+        <h3 class="text-2xl font-semibold">2. HTML</h3>
+        <p class="mb-4">
+          HTML adalah tulang punggung halaman web, digunakan untuk membuat struktur konten.
+        </p>
         <ul class="list-disc pl-6 mt-4 space-y-4">
-          <li>Struktur Dasar
-            <pre><code>&lt;!DOCTYPE html&gt;
+          <li><strong>Struktur Dasar</strong>
+            <p>Dasar setiap dokumen HTML.</p>
+            <pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;&lt;title&gt;Judul&lt;/title&gt;&lt;/head&gt;
-  &lt;body&gt;Halo Dunia&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  &lt;head&gt;
+    &lt;title&gt;Judul&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Halo Dunia
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
           </li>
-          <li>Formulir
-            <pre><code>&lt;form action="proses.php" method="post"&gt;
+          <li><strong>Formulir</strong>
+            <p>Membuat formulir untuk input pengguna.</p>
+            <pre>&lt;form action="proses.php" method="post"&gt;
   &lt;input type="text" name="nama" /&gt;
   &lt;button type="submit"&gt;Kirim&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;</pre>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-2xl font-semibold">CSS</h3>
+        <h3 class="text-2xl font-semibold">3. CSS</h3>
+        <p class="mb-4">
+          CSS digunakan untuk menata tampilan halaman web agar lebih menarik.
+        </p>
         <ul class="list-disc pl-6 mt-4 space-y-4">
-          <li>Box Styling
-            <pre><code>div {
+          <li><strong>Box Styling</strong>
+            <p>Mengatur padding, margin, dan border elemen.</p>
+            <pre>div {
   padding: 20px;
   margin: 10px;
   border: 1px solid black;
-}</code></pre>
+}</pre>
           </li>
-          <li>Flexbox
-            <pre><code>.container {
+          <li><strong>Flexbox</strong>
+            <p>Mengatur tata letak elemen secara fleksibel.</p>
+            <pre>.container {
   display: flex;
   justify-content: space-between;
-}</code></pre>
+}</pre>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-2xl font-semibold">PHP Dasar</h3>
+        <h3 class="text-2xl font-semibold">4. PHP Dasar</h3>
+        <p class="mb-4">
+          PHP adalah bahasa server-side untuk membangun web dinamis dan terhubung dengan database.
+        </p>
         <ul class="list-disc pl-6 mt-4 space-y-4">
-          <li>Menampilkan Text
-            <pre><code>&lt;?php
+          <li><strong>Menampilkan Teks</strong>
+            <p>Menampilkan output sederhana di halaman web.</p>
+            <pre>&lt;?php
 echo "Halo Dunia";
-?&gt;</code></pre>
+?&gt;</pre>
           </li>
-          <li>Koneksi Database
-            <pre><code>&lt;?php
+          <li><strong>Koneksi Database</strong>
+            <p>Menghubungkan PHP dengan database MySQL.</p>
+            <pre>&lt;?php
 $conn = mysqli_connect("localhost", "root", "", "sekolah");
-if (!$conn) die("Gagal");
-?&gt;</code></pre>
+if (!$conn) {
+    die("Gagal terhubung: " . mysqli_connect_error());
+}
+?&gt;</pre>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-2xl font-semibold">Java Dasar</h3>
+        <h3 class="text-2xl font-semibold">5. Java Dasar</h3>
+        <p class="mb-4">
+          Java adalah bahasa pemrograman serbaguna, sering digunakan untuk aplikasi skala besar.
+        </p>
         <ul class="list-disc pl-6 mt-4 space-y-4">
-          <li>Program Dasar
-            <pre><code>public class Halo {
+          <li><strong>Program Dasar</strong>
+            <p>Struktur dasar program Java.</p>
+            <pre>public class Halo {
   public static void main(String[] args) {
     System.out.println("Halo Dunia");
   }
-}</code></pre>
+}</pre>
           </li>
-          <li>OOP Sederhana
-            <pre><code>class Mobil {
+          <li><strong>OOP Sederhana</strong>
+            <p>Konsep dasar pemrograman berorientasi objek.</p>
+            <pre>class Mobil {
   String merk;
-  Mobil(String m) { merk = m; }
-  void jalan() { System.out.println(merk + " berjalan"); }
-}</code></pre>
+  Mobil(String m) {
+    merk = m;
+  }
+  void jalan() {
+    System.out.println(merk + " berjalan");
+  }
+}</pre>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-2xl font-semibold">API Laravel (Bonus)</h3>
+        <h3 class="text-2xl font-semibold">6. API Laravel (Bonus)</h3>
+        <p class="mb-4">
+          Pengenalan singkat membuat API sederhana dengan Laravel untuk pengelolaan data siswa.
+        </p>
         <ul class="list-disc pl-6 mt-4 space-y-4">
-          <li>Routing API
-            <pre><code>// routes/api.php
-Route::get('/siswa', [SiswaController::class, 'index']);</code></pre>
+          <li><strong>Routing API</strong>
+            <p>Menentukan rute API di Laravel.</p>
+            <pre>// routes/api.php
+use App\Http\Controllers\SiswaController;
+Route::get('/siswa', [SiswaController::class, 'index']);</pre>
           </li>
-          <li>Controller
-            <pre><code>public function index() {
-  return response()->json(Siswa::all());
-}</code></pre>
+          <li><strong>Controller</strong>
+            <p>Menangani logika untuk endpoint API.</p>
+            <pre>namespace App\Http\Controllers;
+use App\Models\Siswa;
+use Illuminate\Http\Request;
+
+class SiswaController extends Controller {
+  public function index() {
+    return response()->json(Siswa::all(), 200);
+  }
+}</pre>
           </li>
-          <li>Model dan Migration
-            <pre><code>// terminal
-php artisan make:model Siswa -m</code></pre>
-            <pre><code>// migration
-$table->string('nama');</code></pre>
+          <li><strong>Model dan Migration</strong>
+            <p>Membuat model dan migration untuk tabel siswa.</p>
+            <pre>// terminal
+php artisan make:model Siswa -m</pre>
+            <pre>// database/migrations/xxxx_create_siswa_table.php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateSiswaTable extends Migration {
+  public function up() {
+    Schema::create('siswa', function (Blueprint $table) {
+      $table->id();
+      $table->string('nama');
+      $table->timestamps();
+    });
+  }
+  public function down() {
+    Schema::dropIfExists('siswa');
+  }
+}</pre>
           </li>
         </ul>
       </div>
 
-      <div class="mt-12">
-        <a href="#" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
+      <div class="mt-12 flex items-center space-x-4">
+        <a
+          href="#materi"
+          class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition"
+        >
           Kembali ke Atas
         </a>
+        <button onclick="shareArticle('materi_kelas10.html', 'Materi Pemrograman Dasar Kelas X')" class="inline-block px-6 py-2 border border-gray-600 text-gray-600 rounded hover:bg-gray-100 transition">
+          Bagikan
+        </button>
       </div>
     </section>
   </main>
 
   <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
-    &copy; 2025 MyBlog. Belajar meniti huruf, menaklukkan zaman.
+    &copy; 2025 MyBlog — Belajar meniti huruf, menaklukkan zaman.
   </footer>
-</body>
 
+  <script>
+    document.getElementById("search").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+    });
+
+    function shareArticle(url, title) {
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          url: window.location.origin + '/' + url
+        }).catch(console.error);
+      } else {
+        alert('Fitur berbagi tidak didukung di browser ini.');
+      }
+    }
+  </script>
+</body>
 </html>

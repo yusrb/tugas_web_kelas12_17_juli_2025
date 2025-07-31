@@ -1,214 +1,392 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyBlog</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: "Georgia", serif;
-    }
-  </style>
-</head>
-<body class="bg-white text-gray-900 leading-relaxed">
-  <header class="border-b border-gray-200">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
-      <div class="flex items-center space-x-6">
-        <nav class="space-x-6 text-sm">
-          <a href="#" class="text-gray-900 font-semibold">Beranda</a>
-          <a href="#artikel" class="hover:text-gray-600">Artikel</a>
-          <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
-        </nav>
-        <div class="relative">
-          <input type="text" id="search" placeholder="Cari artikel..." class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBlog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Georgia", serif;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 leading-relaxed">
+    <header class="border-b border-gray-200">
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+        <div class="flex items-center space-x-6">
+          <nav class="space-x-6 text-sm">
+            <a href="#" class="text-gray-900 font-semibold">Beranda</a>
+            <a href="#artikel" class="hover:text-gray-600">Artikel</a>
+            <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
+          </nav>
+          <div class="relative">
+            <input
+              type="text"
+              id="search"
+              placeholder="Cari artikel..."
+              class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+            />
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h2 class="text-5xl font-bold mb-4 leading-snug">
-        Selamat Datang <br />
-        Di Blog Saya..
-      </h2>
-      <p class="text-gray-600 text-lg mb-6">
-        Ruang untuk berbagi cerita, ilmu, dan inspirasi. Setiap artikel adalah
-        jendela ke dunia baru, mari kita jelajahi bersama.
-      </p>
-      <a href="#artikel" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
-        Mulai Membaca
-      </a>
-    </div>
-    <div>
-      <img src="https://picsum.photos/id/1044/800/500" class="rounded shadow-lg" alt="Hero Image" />
-    </div>
-  </section>
-
-  <section class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div class="md:col-span-3 space-y-12" id="artikel">
-      <article class="group cursor-pointer" data-kategori="web">
-        <a href="materi_kelas10.html" class="block">
-          <img src="https://blog.sribu.com/wp-content/uploads/2018/07/Bahasa-Pemrograman-1.jpg"
-            class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
-            alt="Pemrograman Web" />
-          <div class="flex justify-between items-center mb-2">
-            <h3 class="text-2xl font-bold group-hover:underline">
-              Materi Kelas 10
-            </h3>
-            <p class="text-gray-500 text-sm">31 Jul 2025</p>
-          </div>
-          <p class="text-gray-600">
-            Pada Kesempatan kali saya akan membagikan ilmu tentang kelas 10.
-          </p>
+    <section
+      class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <h2 class="text-5xl font-bold mb-4 leading-snug">
+          Selamat Datang <br />
+          Di Blog Saya
+        </h2>
+        <p class="text-gray-600 text-lg mb-6">
+          Ruang untuk berbagi cerita, ilmu, dan inspirasi. Setiap artikel adalah
+          jendela ke dunia baru, mari kita jelajahi bersama.
+        </p>
+        <a
+          href="#artikel"
+          class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition"
+        >
+          Mulai Membaca
         </a>
-      </article>
+      </div>
+      <div>
+        <img
+          src="https://picsum.photos/id/1044/800/500"
+          class="rounded shadow-lg"
+          alt="Hero Image"
+        />
+      </div>
+    </section>
 
-      <article class="group cursor-pointer" data-kategori="pemrograman-web">
-        <a href="web_11.html" class="block">
-          <img src="https://tse2.mm.bing.net/th/id/OIP.iCox_XdylgscEr8jWWTkegHaEU?rs=1&pid=ImgDetMain&o=7&rm=3"
-            class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
-            alt="Pemrograman Web" />
-          <div class="flex justify-between items-center mb-2">
-            <h3 class="text-2xl font-bold group-hover:underline">
-              Pemrograman Web Kelas XI
-            </h3>
-            <p class="text-gray-500 text-sm">30 Jul 2025</p>
-          </div>
-          <p class="text-gray-600">
-            Pada Kesempatan kali saya akan membagikan ilmu tentang kelas 10...
-          </p>
-        </a>
-      </article>
+    <section
+      class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10"
+    >
+      <div class="md:col-span-3 space-y-12" id="artikel">
+        <article class="group cursor-pointer" data-kategori="web">
+          <a href="materi_kelas10.html" class="block">
+            <img
+              src="https://blog.sribu.com/wp-content/uploads/2018/07/Bahasa-Pemrograman-1.jpg"
+              class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
+              alt="Pemrograman Web"
+            />
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-2xl font-bold group-hover:underline">
+                Materi Kelas 10
+              </h3>
+              <p class="text-gray-500 text-sm">31 Jul 2025</p>
+            </div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="badge bg-blue-100 text-blue-800"
+                >Pemrograman Web</span
+              >
+              <span class="text-gray-500 text-sm">• 5 menit baca</span>
+              <span class="text-gray-500 text-sm">• Oleh Yusar</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Pada kesempatan kali ini, saya akan berbagi ilmu dasar pemrograman
+              untuk siswa kelas 10, meliputi HTML, CSS, dan konsep awal
+              JavaScript.
+            </p>
+            <div class="flex space-x-4 text-sm">
+              <button
+                onclick="shareArticle('materi_kelas10.html', 'Materi Kelas 10')"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                Bagikan
+              </button>
+            </div>
+          </a>
+        </article>
 
-      <article class="group cursor-pointer" data-kategori="pbtgm">
-        <a href="pbtgm_11.html" class="block">
-          <img src="data:image/webp;base64,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"
-            class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition" alt="pbtgm" />
-          <div class="flex justify-between items-center mb-2">
-            <h3 class="text-2xl font-bold group-hover:underline">
-              Materi PBTGM Kelas XI
-            </h3>
-            <p class="text-gray-500 text-sm">29 Jul 2025</p>
-          </div>
-          <p class="text-gray-600">
-            Materi Pemrograman berbasis Teks dan Grafis Multimedia (PBTGM) kelas
-            XI
-          </p>
-        </a>
-      </article>
+        <article class="group cursor-pointer" data-kategori="pemrograman-web">
+          <a href="web_11.html" class="block">
+            <img
+              src="https://tse2.mm.bing.net/th/id/OIP.iCox_XdylgscEr8jWWTkegHaEU?rs=1&pid=ImgDetMain&o=7&rm=3"
+              class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
+              alt="Pemrograman Web"
+            />
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-2xl font-bold group-hover:underline">
+                Pemrograman Web Kelas XI
+              </h3>
+              <p class="text-gray-500 text-sm">30 Jul 2025</p>
+            </div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="badge bg-blue-100 text-blue-800"
+                >Pemrograman Web</span
+              >
+              <span class="text-gray-500 text-sm">• 7 menit baca</span>
+              <span class="text-gray-500 text-sm">• Oleh Yusar</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Pelajari pembuatan API dengan Laravel untuk siswa kelas XI,
+              termasuk routing, controller, dan pengujian dengan Postman.
+            </p>
+            <div class="flex space-x-4 text-sm">
+              <button
+                onclick="shareArticle('web_11.html', 'Pemrograman Web Kelas XI')"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                Bagikan
+              </button>
+            </div>
+          </a>
+        </article>
 
-      <article class="group cursor-pointer" data-kategori="PPB">
-        <a href="ppb_11.html" class="block">
-          <img src="https://cypersystems.com/wp-content/uploads/2022/12/Flutter-1.jpg"
-            class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition" alt="PPB" />
-          <div class="flex justify-between items-center mb-2">
-            <h3 class="text-2xl font-bold group-hover:underline">
-              Materi PPB Kelas XI
-            </h3>
-            <p class="text-gray-500 text-sm">28 Jul 2025</p>
-          </div>
-          <p class="text-gray-600">
-            Bersama kita akan mempelajari Materi PPB Kelas XI...
-          </p>
-        </a>
-      </article>
+        <article class="group cursor-pointer" data-kategori="pbtgm">
+          <a href="pbtgm_11.html" class="block">
+            <img
+              src="data:image/webp;base64,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"
+              class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
+              alt="PBTGM"
+            />
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-2xl font-bold group-hover:underline">
+                Materi PBTGM Kelas XI
+              </h3>
+              <p class="text-gray-500 text-sm">29 Jul 2025</p>
+            </div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="badge bg-green-100 text-green-800">PBTGM</span>
+              <span class="text-gray-500 text-sm">• 6 menit baca</span>
+              <span class="text-gray-500 text-sm">• Oleh Yusar</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Materi Pemrograman Berbasis Teks dan Grafis Multimedia (PBTGM)
+              untuk kelas XI, mencakup dasar-dasar animasi dan pengolahan
+              grafis.
+            </p>
+            <div class="flex space-x-4 text-sm">
+              <button
+                onclick="shareArticle('pbtgm_11.html', 'Materi PBTGM Kelas XI')"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                Bagikan
+              </button>
+            </div>
+          </a>
+        </article>
 
-      <article id="pkwu_11" class="group cursor-pointer" data-kategori="pkwu">
-        <a href="pkwu_11.html" class="block">
-          <img src="https://i.ytimg.com/vi/lT0HSWFIfEk/maxresdefault.jpg"
-            class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition" alt="pkwu" />
-          <div class="flex justify-between items-center mb-2">
-            <h3 class="text-2xl font-bold group-hover:underline">
-              Materi PKWU Kelas XI
-            </h3>
-            <p class="text-gray-500 text-sm">27 Jul 2025</p>
-          </div>
-          <p class="text-gray-600">
-            Materi PKWU kelas XI, menjelajahi dunia kewirausahaan dan bisnis.
-          </p>
-        </a>
-      </article>
+        <article class="group cursor-pointer" data-kategori="PPB">
+          <a href="ppb_11.html" class="block">
+            <img
+              src="https://cypersystems.com/wp-content/uploads/2022/12/Flutter-1.jpg"
+              class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
+              alt="PPB"
+            />
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-2xl font-bold group-hover:underline">
+                Materi PPB Kelas XI
+              </h3>
+              <p class="text-gray-500 text-sm">28 Jul 2025</p>
+            </div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="badge bg-purple-100 text-purple-800">PPB</span>
+              <span class="text-gray-500 text-sm">• 8 menit baca</span>
+              <span class="text-gray-500 text-sm">• Oleh Yusar</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Pelajari dasar-dasar Pemrograman Perangkat Bergerak (PPB) untuk
+              kelas XI, dengan fokus pada pengembangan aplikasi menggunakan
+              Flutter.
+            </p>
+            <div class="flex space-x-4 text-sm">
+              <button
+                onclick="shareArticle('ppb_11.html', 'Materi PPB Kelas XI')"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                Bagikan
+              </button>
+            </div>
+          </a>
+        </article>
 
-      <article class="group cursor-pointer" data-kategori="db">
-        <a href="basisdata_11.html" class="block">
-          <img src="https://i.ytimg.com/vi/mV9O-hgIbSw/maxresdefault.jpg"
-            class="w-full h-72 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition" alt="Database" />
-          <div class="flex justify-between items-center mb-2">
-            <h3 class="text-2xl font-bold group-hover:underline">
-              Materi Basis Data Kelas XI
-            </h3>
-            <p class="text-gray-500 text-sm">26 Jul 2025</p>
-          </div>
-          <p class="text-gray-600">Materi Basis Data kelas XI.</p>
-        </a>
-      </article>
-    </div>
+        <article id="pkwu_11" class="group cursor-pointer" data-kategori="pkwu">
+          <a href="pkwu_11.html" class="block">
+            <img
+              src="https://i.ytimg.com/vi/lT0HSWFIfEk/maxresdefault.jpg"
+              class="w-full h-64 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
+              alt="PKWU"
+            />
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-2xl font-bold group-hover:underline">
+                Materi PKWU Kelas XI
+              </h3>
+              <p class="text-gray-500 text-sm">27 Jul 2025</p>
+            </div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="badge bg-yellow-100 text-yellow-800">PKWU</span>
+              <span class="text-gray-500 text-sm">• 5 menit baca</span>
+              <span class="text-gray-500 text-sm">• Oleh Yusar</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Materi PKWU kelas XI, menjelajahi dunia kewirausahaan dan bisnis
+              dengan ide-ide kreatif dan praktik nyata.
+            </p>
+            <div class="flex space-x-4 text-sm">
+              <button
+                onclick="shareArticle('pkwu_11.html', 'Materi PKWU Kelas XI')"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                Bagikan
+              </button>
+            </div>
+          </a>
+        </article>
 
-    <aside class="md:col-span-1">
-      <div class="mb-8 p-6 bg-white border border-gray-200 rounded-xl shadow-sm text-center space-y-4">
-        <div>
-          <img src="assets/images/gw.jpg" alt="Foto Saya"
-            class="w-24 h-24 mx-auto rounded-full object-cover border border-gray-300 shadow" />
-        </div>
-        <div>
-          <h3 class="text-md font-semibold">Tentang Saya</h3>
-          <p class="text-gray-600 text-[10px] leading-relaxed text-center">
-            Hidupku Ceritaku
-          </p>
-        </div>
+        <article class="group cursor-pointer" data-kategori="db">
+          <a href="basisdata_11.html" class="block">
+            <img
+              src="https://i.ytimg.com/vi/mV9O-hgIbSw/maxresdefault.jpg"
+              class="w-full h-72 object-cover rounded mb-4 grayscale group-hover:grayscale-0 transition"
+              alt="Database"
+            />
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-2xl font-bold group-hover:underline">
+                Materi Basis Data Kelas XI
+              </h3>
+              <p class="text-gray-500 text-sm">26 Jul 2025</p>
+            </div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="badge bg-red-100 text-red-800">Basis Data</span>
+              <span class="text-gray-500 text-sm">• 6 menit baca</span>
+              <span class="text-gray-500 text-sm">• Oleh Yusar</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Pelajari konsep dasar basis data untuk kelas XI, termasuk SQL,
+              desain tabel, dan manajemen data.
+            </p>
+            <div class="flex space-x-4 text-sm">
+              <button
+                onclick="shareArticle('basisdata_11.html', 'Materi Basis Data Kelas XI')"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                Bagikan
+              </button>
+            </div>
+          </a>
+        </article>
       </div>
 
-      <h3 class="text-xl font-semibold mb-4">Pilih Kategori</h3>
-      <div class="flex flex-col gap-3 text-sm">
-        <button onclick="filterKategori('semua')" class="text-left px-4 py-2 border rounded hover:bg-gray-100">
-          Semua
-        </button>
-        <button onclick="filterKategori('web')" class="text-left px-4 py-2 border rounded hover:bg-gray-100">
-          Pemrograman Web
-        </button>
-        <button onclick="filterKategori('pbtgm')" class="text-left px-4 py-2 border rounded hover:bg-gray-100">
-          PBTGM
-        </button>
-        <button onclick="filterKategori('PPB')" class="text-left px-4 py-2 border rounded hover:bg-gray-100">
-          PPB
-        </button>
-        <button onclick="filterKategori('pkwu')" class="text-left px-4 py-2 border rounded hover:bg-gray-100">
-          PKWU
-        </button>
-        <button onclick="filterKategori('db')" class="text-left px-4 py-2 border rounded hover:bg-gray-100">
-          Basis Data
-        </button>
-      </div>
-    </aside>
-  </section>
+      <aside class="md:col-span-1">
+        <div
+          class="mb-8 p-6 bg-white border border-gray-200 rounded-xl shadow-sm text-center space-y-4"
+        >
+          <div>
+            <img
+              src="assets/images/gw.jpg"
+              alt="Foto Saya"
+              class="w-24 h-24 mx-auto rounded-full object-cover border border-gray-300 shadow"
+            />
+          </div>
+          <a href="/tentang.html">
+            <div>
+              <h3 class="text-md font-semibold">Tentang Saya</h3>
+              <p class="text-gray-600 text-[10px] leading-relaxed text-center">
+                Hidupku Ceritaku
+              </p>
+            </div>
+          </a>
+        </div>
 
-  <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
-    &copy; 2025 MyBlog. Berbagi cerita, berbagi ilmu.
-  </footer>
+        <h3 class="text-xl font-semibold mb-4">Pilih Kategori</h3>
+        <div class="flex flex-col gap-3 text-sm">
+          <button
+            onclick="filterKategori('semua')"
+            class="text-left px-4 py-2 border rounded hover:bg-gray-100"
+          >
+            Semua
+          </button>
+          <button
+            onclick="filterKategori('web')"
+            class="text-left px-4 py-2 border rounded hover:bg-gray-100"
+          >
+            Pemrograman Web
+          </button>
+          <button
+            onclick="filterKategori('pbtgm')"
+            class="text-left px-4 py-2 border rounded hover:bg-gray-100"
+          >
+            PBTGM
+          </button>
+          <button
+            onclick="filterKategori('PPB')"
+            class="text-left px-4 py-2 border rounded hover:bg-gray-100"
+          >
+            PPB
+          </button>
+          <button
+            onclick="filterKategori('pkwu')"
+            class="text-left px-4 py-2 border rounded hover:bg-gray-100"
+          >
+            PKWU
+          </button>
+          <button
+            onclick="filterKategori('db')"
+            class="text-left px-4 py-2 border rounded hover:bg-gray-100"
+          >
+            Basis Data
+          </button>
+        </div>
+      </aside>
+    </section>
 
-  <script>
-    function filterKategori(kategori) {
-      const semuaArtikel = document.querySelectorAll("article");
-      semuaArtikel.forEach((artikel) => {
-        const jenis = artikel.getAttribute("data-kategori");
-        artikel.style.display =
-          kategori === jenis || kategori === "semua" ? "block" : "none";
+    <footer
+      class="border-t border-gray-200 text-center py-6 text-sm text-gray-500"
+    >
+      &copy; 2025 MyBlog. Berbagi cerita, berbagi ilmu.
+    </footer>
+
+    <script>
+      function filterKategori(kategori) {
+        const semuaArtikel = document.querySelectorAll("article");
+        semuaArtikel.forEach((artikel) => {
+          const jenis = artikel.getAttribute("data-kategori");
+          artikel.style.display =
+            kategori === jenis || kategori === "semua" ? "block" : "none";
+        });
+      }
+
+      document.getElementById("search").addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const semuaArtikel = document.querySelectorAll("article");
+        semuaArtikel.forEach((artikel) => {
+          const judul = artikel.querySelector("h3").textContent.toLowerCase();
+          const deskripsi = artikel
+            .querySelector("p")
+            .textContent.toLowerCase();
+          artikel.style.display =
+            judul.includes(query) || deskripsi.includes(query)
+              ? "block"
+              : "none";
+        });
       });
-    }
 
-    document.getElementById("search").addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      const semuaArtikel = document.querySelectorAll("article");
-      semuaArtikel.forEach((artikel) => {
-        const judul = artikel.querySelector("h3").textContent.toLowerCase();
-        const deskripsi = artikel.querySelector("p").textContent.toLowerCase();
-        artikel.style.display =
-          judul.includes(query) || deskripsi.includes(query) ? "block" : "none";
-      });
-    });
-  </script>
-</body>
+      function shareArticle(url, title) {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: title,
+              url: window.location.origin + "/" + url,
+            })
+            .catch(console.error);
+        } else {
+          alert("Fitur berbagi tidak didukung di browser ini.");
+        }
+      }
+    </script>
+  </body>
 </html>

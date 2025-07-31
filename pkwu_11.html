@@ -3,87 +3,176 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyBlog – HAKI dan BEP</title>
+    <title>MyBlog - HAKI & BEP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         font-family: "Georgia", serif;
       }
+      .prose pre {
+        background-color: #f3f4f6;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        font-size: 0.875rem;
+      }
+      .prose h3,
+      .prose h4 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900 leading-relaxed">
     <header class="border-b border-gray-200">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
-      <div class="flex items-center space-x-6">
-        <nav class="space-x-6 text-sm">
-          <a href="index.html" class="text-gray-900">Beranda</a>
-          <a href="index.html#artikel" class="hover:text-gray-600 font-semibold">Artikel</a>
-          <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
-        </nav>
-        <div class="relative">
-          <input type="text" id="search" placeholder="Cari artikel..." class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+        <div class="flex items-center space-x-6">
+          <nav class="space-x-6 text-sm">
+            <a href="index.html" class="text-gray-900 font-semibold">Beranda</a>
+            <a href="index.html#artikel" class="hover:text-gray-600">Artikel</a>
+            <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
+          </nav>
+          <div class="relative">
+            <input
+              type="text"
+              id="search"
+              placeholder="Cari artikel..."
+              class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
+            />
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
+    <main class="max-w-4xl mx-auto px-6 py-12 prose" id="materi">
       <img
         src="https://i.ytimg.com/vi/lT0HSWFIfEk/maxresdefault.jpg"
         alt="Materi PKWU XI"
-        class="w-full rounded shadow mb-8"
+        class="w-full h-96 object-cover rounded shadow-lg mb-8"
       />
       <h2 class="text-4xl font-bold mb-4">Materi PKWU Kelas XI: HAKI & BEP</h2>
+      <div class="flex items-center space-x-2 mb-4">
+        <span class="badge bg-yellow-100 text-yellow-800">PKWU</span>
+        <span class="text-gray-500 text-sm">• 5 menit baca</span>
+        <span class="text-gray-500 text-sm">• Oleh Admin</span>
+        <span class="text-gray-500 text-sm">• 27 Jul 2025</span>
+      </div>
       <p class="text-gray-600 text-lg mb-6 italic">
-        "Dalam dunia usaha, perlindungan ide dan perhitungan titik impas adalah fondasi keberlangsungan."
+        "Dalam dunia usaha, perlindungan ide dan perhitungan titik impas adalah
+        fondasi keberlangsungan."
       </p>
 
-      <section class="space-y-6 text-gray-800 text-justify">
-        <h3 class="text-2xl font-semibold">1. HAKI (Hak Atas Kekayaan Intelektual)</h3>
-        <p>
-          HAKI adalah hak eksklusif yang diberikan kepada individu atau kelompok atas karya intelektual yang mereka hasilkan.
-          Tujuan utamanya adalah untuk melindungi hasil karya dari pembajakan, penjiplakan, dan penggunaan tanpa izin.
-        </p>
-        <ul class="list-disc pl-6">
-          <li><strong>Hak Cipta</strong> – Meliputi karya seni, sastra, musik, dan program komputer.</li>
-          <li><strong>Paten</strong> – Perlindungan atas penemuan teknologi.</li>
-          <li><strong>Merek Dagang</strong> – Identitas visual seperti logo dan nama produk.</li>
-          <li><strong>Desain Industri</strong> – Bentuk visual suatu produk.</li>
-        </ul>
+      <section class="space-y-10 text-gray-800 text-justify">
+        <div>
+          <h3 class="text-2xl font-semibold">
+            1. HAKI (Hak Atas Kekayaan Intelektual)
+          </h3>
+          <p class="mb-4">
+            HAKI adalah hak eksklusif yang diberikan kepada individu atau
+            kelompok atas karya intelektual mereka. Tujuannya melindungi hasil
+            karya dari pembajakan, penjiplakan, atau penggunaan tanpa izin.
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>
+              <strong>Hak Cipta</strong>: Melindungi karya seni, sastra, musik,
+              dan program komputer.
+            </li>
+            <li>
+              <strong>Paten</strong>: Perlindungan untuk penemuan teknologi
+              baru.
+            </li>
+            <li>
+              <strong>Merek Dagang</strong>: Identitas visual seperti logo atau
+              nama produk.
+            </li>
+            <li>
+              <strong>Desain Industri</strong>: Perlindungan bentuk visual suatu
+              produk.
+            </li>
+          </ul>
+        </div>
 
-        <h3 class="text-2xl font-semibold">2. BEP (Break Even Point)</h3>
-        <p>
-          BEP adalah titik di mana total pendapatan sama dengan total biaya, sehingga perusahaan tidak untung maupun rugi.
-          Memahami BEP sangat penting agar usaha tidak berjalan di bawah ambang kerugian.
-        </p>
-        <p>Rumus BEP:</p>
-        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-  BEP (unit) = Total Biaya Tetap / (Harga Jual per Unit - Biaya Variabel per Unit)
-        </pre>
-        <p>Contoh:</p>
-        <ul class="list-disc pl-6">
-          <li>Biaya tetap: Rp5.000.000</li>
-          <li>Harga jual: Rp50.000</li>
-          <li>Biaya variabel: Rp30.000</li>
-          <li>Maka BEP = 5.000.000 / (50.000 - 30.000) = 250 unit</li>
-        </ul>
+        <div>
+          <h3 class="text-2xl font-semibold">2. BEP (Break Even Point)</h3>
+          <p class="mb-4">
+            BEP adalah titik di mana total pendapatan sama dengan total biaya,
+            sehingga usaha tidak untung maupun rugi. Memahami BEP membantu
+            wirausaha menghindari kerugian.
+          </p>
+          <p class="mb-2">Rumus BEP:</p>
+          <pre>
+BEP (unit) = Total Biaya Tetap / (Harga Jual per Unit - Biaya Variabel per Unit)</pre
+          >
+          <p class="mb-2">Contoh Perhitungan:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Biaya tetap: Rp5.000.000</li>
+            <li>Harga jual per unit: Rp50.000</li>
+            <li>Biaya variabel per unit: Rp30.000</li>
+            <li>BEP = 5.000.000 / (50.000 - 30.000) = 250 unit</li>
+          </ul>
+        </div>
 
-        <h3 class="text-2xl font-semibold">Kesimpulan</h3>
-        <p>
-          HAKI memberi perlindungan atas ide dan inovasi; sementara BEP memberi arah pengatur penjualan dalam pengelolaan keuangan usaha. Kudaanya kedua konsep ini sangat penting dalam dunia kewirausahaan.
-        </p>
+        <div>
+          <h3 class="text-2xl font-semibold">Kesimpulan</h3>
+          <p class="mb-4">
+            HAKI melindungi inovasi dan kreativitas, sedangkan BEP memberikan
+            panduan finansial untuk keberlanjutan usaha. Kedua konsep ini adalah
+            pilar utama dalam dunia kewirausahaan yang sukses.
+          </p>
+        </div>
 
-        <div class="mt-12">
-          <a href="#" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
+        <div class="mt-12 flex items-center space-x-4">
+          <a
+            href="#materi"
+            class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition"
+          >
             Kembali ke Atas
           </a>
+          <button
+            onclick="shareArticle('pkwu_11.html', 'Materi PKWU Kelas XI: HAKI & BEP')"
+            class="inline-block px-6 py-2 border border-gray-600 text-gray-600 rounded hover:bg-gray-100 transition"
+          >
+            Bagikan
+          </button>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
-      &copy; 2025 PKWU XI. Wirausaha, Inovasi, dan Perhitungan yang Bijak.
+    <footer
+      class="border-t border-gray-200 text-center py-6 text-sm text-gray-500"
+    >
+      &copy; 2025 MyBlog — Wirausaha, inovasi, dan perhitungan yang bijak.
     </footer>
+
+    <script>
+      document.getElementById("search").addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+      });
+
+      function shareArticle(url, title) {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: title,
+              url: window.location.origin + "/" + url,
+            })
+            .catch(console.error);
+        } else {
+          alert("Fitur berbagi tidak didukung di browser ini.");
+        }
+      }
+    </script>
   </body>
 </html>

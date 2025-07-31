@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyBlog - Basis Data Kelas XI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: "Georgia", serif;
-      }
-    </style>
-  </head>
-
-  <body class="bg-white text-gray-900 leading-relaxed">
-    <header class="border-b border-gray-200">
-      <div
-        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
-        <div class="flex items-center space-x-6">
-          <nav class="space-x-6 text-sm">
-            <a href="index.html" class="text-gray-900">Beranda</a>
-            <a
-              href="index.html#artikel"
-              class="hover:text-gray-600 font-semibold"
-              >Artikel</a
-            >
-            <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
-          </nav>
-          <div class="relative">
-            <input
-              type="text"
-              id="search"
-              placeholder="Cari artikel..."
-              class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
-            />
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBlog - Basis Data Kelas XI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+    }
+    .prose pre {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.875rem;
+    }
+    .prose h3, .prose h4 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 leading-relaxed">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+      <div class="flex items-center space-x-6">
+        <nav class="space-x-6 text-sm">
+          <a href="index.html" class="text-gray-900 font-semibold">Beranda</a>
+          <a href="index.html#artikel" class="hover:text-gray-600">Artikel</a>
+          <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
+        </nav>
+        <div class="relative">
+          <input type="text" id="search" placeholder="Cari artikel..." class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12" id="materi">
-      <img
-        src="https://i.ytimg.com/vi/mV9O-hgIbSw/maxresdefault.jpg"
-        alt="Database"
-        class="w-full rounded shadow mb-8"
-      />
-      <h2 class="text-4xl font-bold mb-4">Pemrograman Basis Data (Database)</h2>
-      <p class="text-gray-600 text-lg mb-6 italic">
-        "Data tersimpan tak bersuara, hingga diperintah bernyanyi dalam query."
-      </p>
+  <main class="max-w-4xl mx-auto px-6 py-12 prose" id="materi">
+    <img
+      src="https://i.ytimg.com/vi/mV9O-hgIbSw/maxresdefault.jpg"
+      alt="Database"
+      class="w-full rounded shadow-lg mb-8"
+    />
+    <h2 class="text-4xl font-bold mb-4">Pemrograman Basis Data Kelas XI</h2>
+    <div class="flex items-center space-x-2 mb-4">
+      <span class="badge bg-red-100 text-red-800">Basis Data</span>
+      <span class="text-gray-500 text-sm">• 8 menit baca</span>
+      <span class="text-gray-500 text-sm">• Oleh Admin</span>
+      <span class="text-gray-500 text-sm">• 26 Jul 2025</span>
+    </div>
+    <p class="text-gray-600 text-lg mb-6 italic">
+      "Data tersimpan tak bersuara, hingga diperintah bernyanyi dalam query."
+    </p>
 
-      <section class="space-y-10 text-gray-800 text-justify">
-        <div>
-          <h3 class="text-2xl font-semibold">1. Apa itu DBMS?</h3>
-          <p>
-            DBMS (Database Management System) adalah perangkat lunak untuk
-            membuat, mengelola, dan memanipulasi database. Contoh: MySQL,
-            PostgreSQL, SQL Server, dan Oracle.
-          </p>
-        </div>
+    <section class="space-y-10 text-gray-800 text-justify">
+      <div>
+        <h3 class="text-2xl font-semibold">1. Apa itu DBMS?</h3>
+        <p class="mb-4">
+          DBMS (Database Management System) adalah perangkat lunak untuk membuat, mengelola, dan memanipulasi database. Contohnya: MySQL, PostgreSQL, SQL Server, dan Oracle. DBMS memungkinkan penyimpanan data secara terstruktur, efisien, dan aman.
+        </p>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">
-            2. DDL – Data Definition Language
-          </h3>
-          <p>Digunakan untuk mendefinisikan struktur database.</p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+      <div>
+        <h3 class="text-2xl font-semibold">2. DDL – Data Definition Language</h3>
+        <p class="mb-4">
+          DDL digunakan untuk mendefinisikan struktur database, seperti membuat, mengubah, atau menghapus tabel.
+        </p>
+        <pre>
 CREATE TABLE siswa (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nama VARCHAR(100),
   umur INT
 );
@@ -76,17 +87,17 @@ CREATE TABLE siswa (
 ALTER TABLE siswa ADD alamat TEXT;
 
 DROP TABLE siswa;
-          </pre>
-        </div>
+        </pre>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">
-            3. DML – Data Manipulation Language
-          </h3>
-          <p>Digunakan untuk manipulasi data di dalam tabel.</p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+      <div>
+        <h3 class="text-2xl font-semibold">3. DML – Data Manipulation Language</h3>
+        <p class="mb-4">
+          DML berfungsi untuk memanipulasi data dalam tabel, seperti menambah, mengambil, mengubah, atau menghapus data.
+        </p>
+        <pre>
 -- Menambah data
-INSERT INTO siswa (id, nama, umur) VALUES (1, 'Budi', 17);
+INSERT INTO siswa (nama, umur) VALUES ('Budi', 17);
 
 -- Mengambil data
 SELECT * FROM siswa;
@@ -96,103 +107,96 @@ UPDATE siswa SET umur = 18 WHERE id = 1;
 
 -- Menghapus data
 DELETE FROM siswa WHERE id = 1;
-          </pre>
-        </div>
+        </pre>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">4. DCL – Data Control Language</h3>
-          <p>Digunakan untuk hak akses dan keamanan data.</p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+      <div>
+        <h3 class="text-2xl font-semibold">4. DCL – Data Control Language</h3>
+        <p class="mb-4">
+          DCL mengatur hak akses dan keamanan data dalam database.
+        </p>
+        <pre>
 -- Memberikan izin
-GRANT SELECT, INSERT ON siswa TO 'user1';
+GRANT SELECT, INSERT ON siswa TO 'user1'@'localhost';
 
 -- Mencabut izin
-REVOKE INSERT ON siswa FROM 'user1';
-          </pre>
-        </div>
+REVOKE INSERT ON siswa FROM 'user1'@'localhost';
+        </pre>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">5. Subquery</h3>
-          <p>Query di dalam query, digunakan untuk seleksi kompleks.</p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+      <div>
+        <h3 class="text-2xl font-semibold">5. Subquery</h3>
+        <p class="mb-4">
+          Subquery adalah query di dalam query, digunakan untuk seleksi data yang lebih kompleks.
+        </p>
+        <pre>
 -- Menampilkan siswa dengan umur di atas rata-rata
-SELECT * FROM siswa
+SELECT nama, umur FROM siswa
 WHERE umur > (
   SELECT AVG(umur) FROM siswa
 );
-          </pre>
-        </div>
+        </pre>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">6. JOIN – Menggabungkan Tabel</h3>
-          <p>
-            JOIN digunakan untuk menggabungkan dua atau lebih tabel berdasarkan
-            relasi antar kolomnya. Biasanya menggunakan
-            <code>FOREIGN KEY</code>.
-          </p>
+      <div>
+        <h3 class="text-2xl font-semibold">6. JOIN – Menggabungkan Tabel</h3>
+        <p class="mb-4">
+          JOIN digunakan untuk menggabungkan dua atau lebih tabel berdasarkan relasi antar kolom, biasanya dengan <code>FOREIGN KEY</code>.
+        </p>
 
-          <h4 class="text-lg font-semibold mt-4">Contoh Struktur Tabel:</h4>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+        <h4 class="text-lg font-semibold">Contoh Struktur Tabel:</h4>
+        <pre>
 -- Tabel siswa
 CREATE TABLE siswa (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   nama VARCHAR(100)
 );
 
 -- Tabel nilai
 CREATE TABLE nilai (
-  id INT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_siswa INT,
   pelajaran VARCHAR(50),
   nilai INT,
   FOREIGN KEY (id_siswa) REFERENCES siswa(id)
 );
-  </pre
-          >
+        </pre>
 
-          <h4 class="text-lg font-semibold mt-4">1. INNER JOIN</h4>
-          <p>Mengembalikan data yang cocok di kedua tabel.</p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+        <h4 class="text-lg font-semibold">6.1. INNER JOIN</h4>
+        <p class="mb-4">
+          Mengembalikan data yang cocok di kedua tabel.
+        </p>
+        <pre>
 SELECT siswa.nama, nilai.pelajaran, nilai.nilai
 FROM siswa
 INNER JOIN nilai ON siswa.id = nilai.id_siswa;
-  </pre
-          >
+        </pre>
 
-          <h4 class="text-lg font-semibold mt-4">2. LEFT JOIN</h4>
-          <p>
-            Menampilkan semua data dari tabel kiri meskipun tidak ada pasangan
-            di tabel kanan.
-          </p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+        <h4 class="text-lg font-semibold">6.2. LEFT JOIN</h4>
+        <p class="mb-4">
+          Menampilkan semua data dari tabel kiri, meskipun tidak ada pasangan di tabel kanan.
+        </p>
+        <pre>
 SELECT siswa.nama, nilai.pelajaran, nilai.nilai
 FROM siswa
 LEFT JOIN nilai ON siswa.id = nilai.id_siswa;
-  </pre
-          >
+        </pre>
 
-          <h4 class="text-lg font-semibold mt-4">3. RIGHT JOIN</h4>
-          <p>
-            Menampilkan semua data dari tabel kanan meskipun tidak ada pasangan
-            di tabel kiri.
-          </p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+        <h4 class="text-lg font-semibold">6.3. RIGHT JOIN</h4>
+        <p class="mb-4">
+          Menampilkan semua data dari tabel kanan, meskipun tidak ada pasangan di tabel kiri.
+        </p>
+        <pre>
 SELECT siswa.nama, nilai.pelajaran, nilai.nilai
 FROM siswa
 RIGHT JOIN nilai ON siswa.id = nilai.id_siswa;
-  </pre
-          >
+        </pre>
 
-          <h4 class="text-lg font-semibold mt-4">4. FULL OUTER JOIN</h4>
-          <p>
-            Menampilkan semua data dari kedua tabel, meskipun tidak saling
-            berpasangan.
-          </p>
-          <p class="text-sm italic text-gray-600">
-            Catatan: Tidak semua DBMS mendukung FULL OUTER JOIN secara langsung
-            (MySQL tidak langsung, gunakan UNION).
-          </p>
-          <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+        <h4 class="text-lg font-semibold">6.4. FULL OUTER JOIN</h4>
+        <p class="mb-4">
+          Menampilkan semua data dari kedua tabel, meskipun tidak saling berpasangan. Catatan: MySQL tidak mendukung langsung FULL OUTER JOIN, gunakan UNION sebagai alternatif.
+        </p>
+        <pre>
 SELECT siswa.nama, nilai.pelajaran, nilai.nilai
 FROM siswa
 LEFT JOIN nilai ON siswa.id = nilai.id_siswa
@@ -200,35 +204,50 @@ UNION
 SELECT siswa.nama, nilai.pelajaran, nilai.nilai
 FROM siswa
 RIGHT JOIN nilai ON siswa.id = nilai.id_siswa;
-  </pre
-          >
-        </div>
+        </pre>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">6. Kesimpulan</h3>
-          <p>
-            Basis data bukan sekadar tempat menyimpan informasi. Ia adalah
-            jantung dari sistem informasi, tempat logika, keamanan, dan
-            efisiensi bertemu. Kuasai DBMS dan perintah SQL untuk mengendalikan
-            data dengan elok dan bijak.
-          </p>
-        </div>
+      <div>
+        <h3 class="text-2xl font-semibold">7. Kesimpulan</h3>
+        <p class="mb-4">
+          Basis data adalah jantung sistem informasi, tempat logika, keamanan, dan efisiensi bersatu. Dengan menguasai DBMS dan SQL, Anda dapat mengendalikan data dengan anggun dan bijaksana.
+        </p>
+      </div>
 
-        <div class="mt-12">
-          <a
-            href="#"
-            class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition"
-          >
-            Kembali ke Atas
-          </a>
-        </div>
-      </section>
-    </main>
+      <div class="mt-12 flex items-center space-x-4">
+        <a
+          href="#materi"
+          class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition"
+        >
+          Kembali ke Atas
+        </a>
+        <button onclick="shareArticle('basisdata_11.html', 'Materi Basis Data Kelas XI')" class="inline-block px-6 py-2 border border-gray-600 text-gray-600 rounded hover:bg-gray-100 transition">
+          Bagikan
+        </button>
+      </div>
+    </section>
+  </main>
 
-    <footer
-      class="border-t border-gray-200 text-center py-6 text-sm text-gray-500"
-    >
-      &copy; 2025 Basis Data XI. Data terstruktur, dunia teratur.
-    </footer>
-  </body>
+  <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
+    &copy; 2025 MyBlog — Data terstruktur, dunia teratur.
+  </footer>
+
+  <script>
+    document.getElementById("search").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+    });
+
+    function shareArticle(url, title) {
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          url: window.location.origin + '/' + url
+        }).catch(console.error);
+      } else {
+        alert('Fitur berbagi tidak didukung di browser ini.');
+      }
+    }
+  </script>
+</body>
 </html>
