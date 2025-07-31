@@ -1,168 +1,175 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyBlog - Materi Dasar Kelas X</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: "Georgia", serif;
-      }
-      pre {
-        background: #f3f4f6;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        overflow-x: auto;
-      }
-    </style>
-  </head>
-  <body class="bg-white text-gray-900 leading-relaxed">
-    <header class="border-b border-gray-200">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBlog - Materi Dasar Kelas X</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+    }
+
+    pre {
+      background: #f3f4f6;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 leading-relaxed">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">MyBlog</h1>
+      <div class="flex items-center space-x-6">
         <nav class="space-x-6 text-sm">
-          <a href="#" class="hover:text-gray-600">Beranda</a>
-          <a href="#" class="hover:text-gray-600">Artikel</a>
+          <a href="index.html" class="text-gray-900">Beranda</a>
+          <a href="index.html#artikel" class="hover:text-gray-600 font-semibold">Artikel</a>
           <a href="tentang.html" class="hover:text-gray-600">Tentang</a>
         </nav>
+        <div class="relative">
+          <input type="text" id="search" placeholder="Cari artikel..."
+            class="w-64 px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900" />
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-      <img
-        src="https://blog.sribu.com/wp-content/uploads/2018/07/Bahasa-Pemrograman-1.jpg"
-        class="w-full h-96 object-cover rounded mb-8 shadow"
-        alt="Pemrograman Web"
-      />
-      <h2 class="text-4xl font-bold mb-4">Materi Pemrograman Kelas X</h2>
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <img src="https://blog.sribu.com/wp-content/uploads/2018/07/Bahasa-Pemrograman-1.jpg"
+      class="w-full h-96 object-cover rounded mb-8 shadow" alt="Pemrograman Web" />
+    <h2 class="text-4xl font-bold mb-4">Materi Pemrograman Kelas X</h2>
 
-      <section class="space-y-10">
-        <div>
-          <h3 class="text-2xl font-semibold">Python Dasar</h3>
-          <ul class="list-disc pl-6 mt-4 space-y-4">
-            <li>Variabel dan Input Output
-              <pre><code>nama = input("Masukkan nama: ")
+    <section class="space-y-10">
+      <div>
+        <h3 class="text-2xl font-semibold">Python Dasar</h3>
+        <ul class="list-disc pl-6 mt-4 space-y-4">
+          <li>Variabel dan Input Output
+            <pre><code>nama = input("Masukkan nama: ")
 print("Halo", nama)</code></pre>
-            </li>
-            <li>Percabangan
-              <pre><code>x = 10
+          </li>
+          <li>Percabangan
+            <pre><code>x = 10
 if x > 5:
     print("Lebih besar dari 5")</code></pre>
-            </li>
-            <li>Perulangan
-              <pre><code>for i in range(5):
+          </li>
+          <li>Perulangan
+            <pre><code>for i in range(5):
     print("Iterasi ke-", i)</code></pre>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">HTML</h3>
-          <ul class="list-disc pl-6 mt-4 space-y-4">
-            <li>Struktur Dasar
-              <pre><code>&lt;!DOCTYPE html&gt;
+      <div>
+        <h3 class="text-2xl font-semibold">HTML</h3>
+        <ul class="list-disc pl-6 mt-4 space-y-4">
+          <li>Struktur Dasar
+            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;&lt;title&gt;Judul&lt;/title&gt;&lt;/head&gt;
   &lt;body&gt;Halo Dunia&lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </li>
-            <li>Formulir
-              <pre><code>&lt;form action="proses.php" method="post"&gt;
+          </li>
+          <li>Formulir
+            <pre><code>&lt;form action="proses.php" method="post"&gt;
   &lt;input type="text" name="nama" /&gt;
   &lt;button type="submit"&gt;Kirim&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">CSS</h3>
-          <ul class="list-disc pl-6 mt-4 space-y-4">
-            <li>Box Styling
-              <pre><code>div {
+      <div>
+        <h3 class="text-2xl font-semibold">CSS</h3>
+        <ul class="list-disc pl-6 mt-4 space-y-4">
+          <li>Box Styling
+            <pre><code>div {
   padding: 20px;
   margin: 10px;
   border: 1px solid black;
 }</code></pre>
-            </li>
-            <li>Flexbox
-              <pre><code>.container {
+          </li>
+          <li>Flexbox
+            <pre><code>.container {
   display: flex;
   justify-content: space-between;
 }</code></pre>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">PHP Dasar</h3>
-          <ul class="list-disc pl-6 mt-4 space-y-4">
-            <li>Menampilkan Text
-              <pre><code>&lt;?php
+      <div>
+        <h3 class="text-2xl font-semibold">PHP Dasar</h3>
+        <ul class="list-disc pl-6 mt-4 space-y-4">
+          <li>Menampilkan Text
+            <pre><code>&lt;?php
 echo "Halo Dunia";
 ?&gt;</code></pre>
-            </li>
-            <li>Koneksi Database
-              <pre><code>&lt;?php
+          </li>
+          <li>Koneksi Database
+            <pre><code>&lt;?php
 $conn = mysqli_connect("localhost", "root", "", "sekolah");
 if (!$conn) die("Gagal");
 ?&gt;</code></pre>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">Java Dasar</h3>
-          <ul class="list-disc pl-6 mt-4 space-y-4">
-            <li>Program Dasar
-              <pre><code>public class Halo {
+      <div>
+        <h3 class="text-2xl font-semibold">Java Dasar</h3>
+        <ul class="list-disc pl-6 mt-4 space-y-4">
+          <li>Program Dasar
+            <pre><code>public class Halo {
   public static void main(String[] args) {
     System.out.println("Halo Dunia");
   }
 }</code></pre>
-            </li>
-            <li>OOP Sederhana
-              <pre><code>class Mobil {
+          </li>
+          <li>OOP Sederhana
+            <pre><code>class Mobil {
   String merk;
   Mobil(String m) { merk = m; }
   void jalan() { System.out.println(merk + " berjalan"); }
 }</code></pre>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold">API Laravel (Bonus)</h3>
-          <ul class="list-disc pl-6 mt-4 space-y-4">
-            <li>Routing API
-              <pre><code>// routes/api.php
+      <div>
+        <h3 class="text-2xl font-semibold">API Laravel (Bonus)</h3>
+        <ul class="list-disc pl-6 mt-4 space-y-4">
+          <li>Routing API
+            <pre><code>// routes/api.php
 Route::get('/siswa', [SiswaController::class, 'index']);</code></pre>
-            </li>
-            <li>Controller
-              <pre><code>public function index() {
+          </li>
+          <li>Controller
+            <pre><code>public function index() {
   return response()->json(Siswa::all());
 }</code></pre>
-            </li>
-            <li>Model dan Migration
-              <pre><code>// terminal
+          </li>
+          <li>Model dan Migration
+            <pre><code>// terminal
 php artisan make:model Siswa -m</code></pre>
-              <pre><code>// migration
+            <pre><code>// migration
 $table->string('nama');</code></pre>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-        <div class="mt-12">
-          <a href="#" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
-            Kembali ke Atas
-          </a>
-        </div>
-      </section>
-    </main>
+      <div class="mt-12">
+        <a href="#" class="inline-block px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition">
+          Kembali ke Atas
+        </a>
+      </div>
+    </section>
+  </main>
 
-    <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
-      &copy; 2025 MyBlog. Belajar meniti huruf, menaklukkan zaman.
-    </footer>
-  </body>
+  <footer class="border-t border-gray-200 text-center py-6 text-sm text-gray-500">
+    &copy; 2025 MyBlog. Belajar meniti huruf, menaklukkan zaman.
+  </footer>
+</body>
+
 </html>
